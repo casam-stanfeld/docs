@@ -40,7 +40,7 @@ curl --location 'https://[your auth0 domain].auth0.com/api/v2/jobs/users-exports
         {"name": "email"},
         {"name":"user_id"},
         {"name":"given_name"},
-        {"name":"last_name"},
+        {"name":"family_name"},
         {
             "name": "identities[0].connection",
             "export_as": "provider"
@@ -72,6 +72,15 @@ The link will look like this:
 ```
 
 #### 2.3 Download the file and extract it.
+
+
+#### 2.4 Make sure that the file is correctly formatted like this:
+```
+email,user_id,given_name,family_name,provider
+"test-user@test-email.com","auth0|012345678910111213141516","","","development-database"
+```
+
+
 
 ### Step 3: Prepare your environment to run the python script
 - Clone the python script from [here](https://github.com/permitio/admin-scripts) to the same folder you extracted the users csv file to.
